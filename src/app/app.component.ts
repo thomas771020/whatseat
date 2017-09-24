@@ -15,9 +15,10 @@ export class AppComponent {
   }
 
   start() {
-    const min = this.optionService.count + 1;
-    const max = this.optionService.count * 5;
-    let n = this.random(min, max);
+    const optionCount = this.optionService.count;
+    const sn = this.random(0, optionCount - 1);
+    let n = optionCount * 5 + sn - 1;
+    this.optionService.setCurrentIndex(0);
     const intervalId = window.setInterval(() => {
       this.selected = this.optionService.next();
       if (n-- <= 0) {

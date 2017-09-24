@@ -13,9 +13,17 @@ export class OptionService {
 
   currentIndex = this.options.length - 1;
 
+  setCurrentIndex(n: number) {
+    this.currentIndex = n;
+  }
+
   next() {
     this.currentIndex = this.isLast() ? 0 : this.currentIndex + 1;
     return this.options[this.currentIndex];
+  }
+
+  getAt(index: number) {
+    return this.options[index];
   }
 
   get count() {
