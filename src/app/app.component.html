@@ -3,6 +3,6 @@
   <div class="wrapper">
     <span class="title">今天吃什麼?</span>
     <div class="selected">{{selected}}</div>
-    <button md-raised-button color="primary" (click)="start()">開始決定</button>
+    <button md-raised-button color="primary" (click)="start()" [disabled]="running">開始決定</button>
   </div>
 </div>
